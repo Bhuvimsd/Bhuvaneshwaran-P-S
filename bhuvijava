@@ -1,0 +1,1612 @@
+
+import java.util.*;
+class main
+{
+    public static void main(String[]args)
+    {
+        Scanner Scanner=new Scanner(System.in);
+        String input=Scanner.nextLine();
+        String[] words=input.split(" ");
+        StringBuilder result=new StringBuilder();
+        for(String word:words)
+        {
+        if(word.length()>=2)
+        {
+            char[] chars=word.toCharArray();
+            Arrays.sort(chars);
+            result.append(new String(chars)).append(" ");
+            
+        }
+        else
+        {
+            result.append(word).append(" ");
+        }
+    }
+    System.out.print(result.toString().trim());
+    Scanner.close();
+}
+}
+
+
+import java.util.Scanner;
+public class main
+{
+    public static void main(String args[])
+    {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        for(int i=n;i>=1;i--)
+        {
+            for(int j=i;j>=1;j--)
+            {
+                System.out.print(j+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+import java.util.*;
+public class main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        List<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            list.add(scanner.nextInt());
+        }
+        List<Integer> palindromicList = convertToPalindromicList(list);
+        for (int num : palindromicList) {
+            System.out.print(num + " ");
+        }
+
+        scanner.close();
+    }
+
+    public static List<Integer> convertToPalindromicList(List<Integer> list) {
+        int left = 0;
+        int right = list.size() - 1;
+
+        while (left < right) {
+            if (list.get(left).equals(list.get(right))) {
+                left++;
+                right--;
+            } else if (list.get(left) < list.get(right)) {
+                list.set(left + 1, list.get(left) + list.get(left + 1));
+                list.remove(left);
+                right--;
+            } else {
+                list.set(right - 1, list.get(right) + list.get(right - 1));
+                list.remove(right);
+                right--;
+            }
+        }
+
+        return list;
+    }
+}
+
+
+
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        String str1 =s.nextLine();
+        String str2 =s.nextLine();
+        String result = removeChars(str1, str2);
+        System.out.println(result);
+    }
+
+    public static String removeChars(String str1, String str2) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < str1.length(); i++) {
+            char c = str1.charAt(i);
+            if (str2.indexOf(c) == -1)
+            {
+                sb.append(c);
+            }
+            else
+            {
+                System.out.print("null");
+            }
+        }
+        return sb.toString();
+    }
+}
+
+
+import java.util.*;
+import java.util.Scanner;
+public class main{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String n=sc.nextLine();
+        int l=length(n);
+        System.out.print(l);
+    }
+    public static int length(String s)
+    {
+        int na=s.length();
+        int max=0,right=0,left=0;
+        Set<Character> set=new HashSet<>();
+        while(right<na)
+        {
+            if(!set.contains(s.charAt(right)))
+            {
+                set.add(s.charAt(right));
+                right++;
+                max=Math.max(max,right-left);
+            }
+            else{
+                set.remove(s.charAt(left));
+                left++;
+            }
+        }
+        return max;
+    }
+}
+
+
+import java.util.Scanner;
+public class main
+{
+    public static void main(String args[])
+    {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=i;j++)
+            {
+                if(j%2==1)
+                {
+                    System.out.print("A");
+                }
+                else
+                {
+                    System.out.print("B");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+import java.util.Scanner;
+public class main
+{
+    public static void main(String args[])
+    {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int count=0;
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=i;j++)
+            {
+                count++;
+                System.out.print(count);
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+'import java.util.Scanner;
+public class main
+{
+    public static void main(String args[])
+    {
+        Scanner s=new Scanner(System.in);
+        String str=s.nextLine();
+        
+        char []ch=str.toCharArray();
+        
+        char temp=ch[0];
+        ch[0]=ch[ch.length-1];
+        ch[ch.length-1]=temp;
+        
+        System.out.println(ch);
+    }
+}
+
+
+import java.util.Scanner;
+public class main
+{
+    public static void main(String args[])
+    {
+        Scanner s=new Scanner(System.in);
+        String str=s.nextLine();
+        char a[]=str.toCharArray();
+        int count=0;
+        for(int i=0;i<str.length();i++)
+        {
+            for(int j=i+1;j<str.length();j++)
+            {
+                
+                if(a[i]==a[j])
+                {
+                    count++;
+                }
+            }
+        }
+        if(count>0)
+        {
+            System.out.print("YES");
+        }
+        else
+        {
+            System.out.print("NO");
+        }
+    }
+}
+
+
+import java.util.Scanner;
+import java.util.*;
+public class main
+{
+    public static void main(String args)
+    {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        s.nextLine();
+        for(int i=1;i<=n;i++)
+        {
+            String str1=s.nextLine();
+            char a=str1.charAt(0);
+            char b=str1.charAt(str1.length()-1);
+            System.out.println(a+""+b);
+        }
+    }
+}
+
+
+import java.util.Scanner;
+public class main{
+    public static void main(String args[]){
+        Scanner S=new Scanner(System.in);
+        int n=S.nextInt();
+        int sum=0;
+        int temp=0;
+        int t,m=0;
+        int c=0;
+        int x=0;
+        while(n>0){
+            t=n%10;
+            sum+=Math.pow(t,2);
+            n/=10;
+        }
+        while(sum>0){
+            m=sum%10;
+            temp+=Math.pow(m,2);
+            sum/=10;
+        }
+        while(temp>0){
+            x=temp%10;
+            c+=Math.pow(x,2);
+            temp/=10;
+        }
+        if(c==1){
+            System.out.println("True");
+        }else{
+            System.out.println("False");
+        }
+    }
+}
+
+
+import java.util.Scanner;
+public class main
+{
+    public static void main(String args[])
+    {
+        Scanner s=new Scanner(System.in);
+        String str=s.nextLine();
+        char a[]=str.toCharArray();
+        int count=0;
+        int re=0;
+        for(int i=1;i<=a.length;i++)
+        {
+            for(int j=i+1;j<a.length;j++)
+            {
+                if(a[i]!=a[j])
+                {
+                    count++;
+                    System.out.print(count);
+                }
+                else{
+                    System.out.print(re);
+                }
+            }
+        }
+        //System.out.print();
+    }
+}
+
+
+import java.util.Scanner;
+public class main
+{
+    public static void main(String args[])
+    {
+        Scanner s=new Scanner(System.in);
+        String str=s.nextLine();
+        String []c=str.split(" ");
+        if(c.length>=2)
+        {
+            String sc=c[1].toUpperCase();
+            System.out.println(sc);
+        }
+        else
+        {
+            System.out.println("LESS");
+        }
+    } 
+}
+
+
+import java.util.Scanner;
+public class main
+{
+    public static boolean isPalindrome(String str)
+    {
+        int left=0;
+        int right=str.length()-1;
+        while(left<right)
+        {
+            if(str.charAt(left)!=str.charAt(right))
+            {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+    private static int findDigitToRemove(String input)
+    {
+        if(isPalindrome(input))
+        {
+            return-1;
+        }
+        int n=input.length();
+        for(int i=0;i<n;i++)
+        {
+            StringBuilder sb=new StringBuilder(input);
+            sb.deleteCharAt(i);
+            if(isPalindrome(sb.toString()))
+            {
+                return Character.getNumericValue(input.charAt(i));
+            }
+        }
+        return-1;
+    }
+    public static void main(String[]args)
+    {
+        Scanner s=new Scanner(System.in);
+        String input=s.nextLine();
+        int result=findDigitToRemove(input);
+        System.out.println(result);
+    }
+}
+    
+
+
+public class main
+{
+        private static boolean isStable(int number) 
+        {
+        String numStr = String.valueOf(number);
+        int[] frequency = new int[10]; 
+        for (char ch : numStr.toCharArray())
+        {
+            int digit = ch - '0';
+            frequency[digit]++;
+        }
+        int firstNonZeroFreq = 0;
+        for (int i = 0; i < 10; i++) 
+        {
+            if (frequency[i] > 0)
+            {
+                firstNonZeroFreq = frequency[i];
+                break;
+            }
+        }
+        for (int i = 0; i < 10; i++) 
+        {
+            if (frequency[i] > 0 && frequency[i] != firstNonZeroFreq) 
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static int findPassword(int input1, int input2, int input3, int input4, int input5) {
+        int sumStable = 0;
+        int sumUnstable = 0;
+        int[] numbers = {input1, input2, input3, input4, input5};
+        for (int number : numbers)
+        {
+            if (isStable(number)) 
+            {
+                sumStable += number;
+            } else {
+                sumUnstable += number;
+            }
+        }
+        int password = sumStable - sumUnstable;
+        return password;
+    }
+    public static void main(String[] args)
+    {
+        int input1 = 12;
+        int input2 = 1313;
+        int input3 = 122;
+        int input4 = 678;
+        int input5 = 898;
+        int password = findPassword(input1, input2, input3, input4, input5);
+        System.out.println( password);
+    }
+}
+
+
+
+public class main
+{
+        private static boolean isStable(int number) 
+        {
+        String numStr = String.valueOf(number);
+        int[] frequency = new int[10]; 
+        for (char ch : numStr.toCharArray())
+        {
+            int digit = ch - '0';
+            frequency[digit]++;
+        }
+        int firstNonZeroFreq = 0;
+        for (int i = 0; i < 10; i++) 
+        {
+            if (frequency[i] > 0)
+            {
+                firstNonZeroFreq = frequency[i];
+                break;
+            }
+        }
+        for (int i = 0; i < 10; i++) 
+        {
+            if (frequency[i] > 0 && frequency[i] != firstNonZeroFreq) 
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static int findPassword(int input1, int input2, int input3, int input4, int input5) {
+        int sumStable = 0;
+        int sumUnstable = 0;
+        int[] numbers = {input1, input2, input3, input4, input5};
+        for (int number : numbers)
+        {
+            if (isStable(number)) 
+            {
+                sumStable += number;
+            } else {
+                sumUnstable += number;
+            }
+        }
+        int password = sumStable - sumUnstable;
+        return password;
+    }
+    public static void main(String[] args)
+    {
+        int input1 = 12;
+        int input2 = 1313;
+        int input3 = 122;
+        int input4 = 678;
+        int input5 = 898;
+        int password = findPassword(input1, input2, input3, input4, input5);
+        System.out.println( password);
+    }
+}
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class main {
+    public static void main(String[] args) {
+        Map<Character, Integer> inDegree = new HashMap<>();
+        Map<Character, Integer> outDegree = new HashMap<>();
+        
+        for (String word : args) {
+            char start = word.charAt(0);
+            char end = word.charAt(word.length() - 1);
+            
+            outDegree.put(start, outDegree.getOrDefault(start, 0) + 1);
+            inDegree.put(end, inDegree.getOrDefault(end, 0) + 1);
+        }
+
+        int startNodes = 0;
+        int endNodes = 0;
+
+        for (char c = 'a'; c <= 'z'; c++) {
+            int out = outDegree.getOrDefault(c, 0);
+            int in = inDegree.getOrDefault(c, 0);
+            
+            if (out - in == 1) {
+                startNodes++;
+            } else if (in - out == 1) {
+                endNodes++;
+            } else if (out != in) {
+              //  return -1; 
+                
+            }
+        }
+        if ((startNodes == 0 && endNodes == 0) || (startNodes == 1 && endNodes == 1)) {
+        }
+    }
+}
+
+
+
+import java.util.Scanner;
+public class main 
+{
+    public static int countWays(int N, int[] S)
+    {
+        int[] dp = new int[N + 1];
+        dp[0] = 1; 
+        for (int coin : S) 
+        {
+            for (int j = coin; j <= N; j++)
+            {
+                dp[j] += dp[j - coin];
+            }
+        }
+        return dp[N]; 
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int N = scanner.nextInt(); 
+        int m = scanner.nextInt(); 
+        int[] S = new int[m]; 
+        for (int i = 0; i < m; i++)
+        {
+            S[i] = scanner.nextInt();
+        }
+        int result = countWays(N, S);
+        System.out.println(result);
+    }
+}
+
+
+
+import java.util.*;
+public class main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        List<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            list.add(scanner.nextInt());
+        }
+        List<Integer> palindromicList = convertToPalindromicList(list);
+        for (int num : palindromicList) {
+            System.out.print(num + " ");
+        }
+
+        scanner.close();
+    }
+
+    public static List<Integer> convertToPalindromicList(List<Integer> list) {
+        int left = 0;
+        int right = list.size() - 1;
+
+        while (left < right) {
+            if (list.get(left).equals(list.get(right))) {
+                left++;
+                right--;
+            } else if (list.get(left) < list.get(right)) {
+                list.set(left + 1, list.get(left) + list.get(left + 1));
+                list.remove(left);
+                right--;
+            } else {
+                list.set(right - 1, list.get(right) + list.get(right - 1));
+                list.remove(right);
+                right--;
+            }
+        }
+
+        return list;
+    }
+}
+
+
+
+
+import java.util.Scanner;
+public class main
+{
+    public static void main(String rgs[])
+    {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int sc=n*n;
+        String a=String.valueOf(n);
+        String b=String.valueOf(sc);
+        if(b.endsWith(a)){
+            System.out.print("Yes");
+        }
+        else{
+            System.out.print("No");
+        }
+    }
+}
+
+
+import java.util.Scanner;
+public class main
+{
+    public static void main(String args[])
+    {
+        Scanner s=new Scanner(System.in);
+        int r=s.nextInt();
+        for(int i=1;i<=r;i++)
+        {
+            for(int j=1;j<=r-i;j++)
+            {
+                System.out.print("   ");
+            }
+            int a=i;
+            for(int j=1;j<=2*i-1;j++)
+            {
+                System.out.print(a+" ");
+                if(j<i)
+                {
+                    a++;
+                }
+                else
+                {
+                    a--;
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+import java.util.Scanner;
+public class main
+{
+    public static void main(String args[])
+    {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        for(int i=0;i<=n;i++)
+        {
+            for(int j=i+1;j<=n;j++)
+            {
+                if(j==0||j==i-1)
+                {
+                System.out.print("1");
+                }
+            else
+            {
+                System.out.print("*");
+            }
+            }
+        }
+        System.out.println();
+    }
+}
+
+
+import java.util.Scanner;
+import java.util.Arrays;
+public class main
+{
+    public static void main(String args[])
+    {
+        Scanner s=new Scanner(System.in);
+        String str=s.nextLine();
+        char a[]=str.toCharArray();
+        Arrays.sort(a);
+        // for(int i=0;i<a.length;i++)
+        // {
+            System.out.print(a[0]);
+        // }
+    }
+}
+
+
+
+import java.util.*;
+public class Main
+{
+   public static void main(String args[])
+   {
+       Scanner s=new Scanner(System.in);
+       int n=s.nextInt();
+       int a[]=new int[n];
+       
+       for(int i=0;i<n;i++)
+       {
+           a[i]=s.nextInt();
+       }
+       for(int i=0;i<n;i++)
+       {
+           for(int j=i+1;j<n;j++)
+           {
+               if(a[i]==a[j])
+               {
+                   for(int k=j;k<n-1;k++)
+                    a[k]=a[k+1];
+                   j--;
+                   n--;
+               }
+               
+           }
+       }
+       for(int i=0;i<n;i++)
+       System.out.println(a[i]);
+       
+   }
+}
+
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	       int n=s.nextInt();
+	       int a[]=new int[n];
+	       for(int i=0;i<n;i++)
+	       {
+	           a[i]=s.nextInt();
+	       }
+	       int pos=s.nextInt();
+	       int e=s.nextInt();
+	       int arr[]=new int[n+1];
+	       for(int i=0;i<pos-1;i++)
+	       {
+	           arr[i]=a[i];
+	       }
+	       arr[pos-1]=e;
+	       for(int i=pos-1;i<n;i++)
+	       {
+	           arr[i+1]=a[i];
+	       }
+	       for(int i=0;i<n+1;i++)
+	       {
+	           System.out.print(arr[i]+" ");
+	       }
+	 }
+}
+
+
+ 
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int n=s.nextInt();
+	    for(int i=1;i<=n;i++)
+	    {
+	        for(int j=1;j<=i;j++)
+	        {
+	            if(i%2==0)
+	            {
+	                System.out.print("*");
+	            }
+	            else{
+	                System.out.print(i);
+	            }
+	        }
+	        System.out.println();
+	    }
+	}
+}
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int n=s.nextInt();
+	    int temp=n;
+	    int max=0;
+	       while(temp>0)
+	       {
+	           n=temp%10;
+	           if(max<n)
+	           {
+	               max=n;
+	           }
+	           temp=temp/10;
+	       }
+	       System.out.print(max);
+	    }
+	}
+
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int n=s.nextInt();
+	    int a[]=new int[n];
+	    for(int i=0;i<n;i++)
+	    {
+	        a[i]=s.nextInt();
+	    }
+	    for(int i=0;i<n;i++)
+	    {
+	        int ar=a[i]%10;
+	        int b=a[i]/10;
+	        int temp=ar;
+	        ar=b;
+	        b=temp;
+	        System.out.print(b);
+	        System.out.print(ar+" ");
+	        
+	    }
+	    }
+	}
+
+
+
+
+
+import java.util.*;
+public class Main
+{
+  public static void main (String[]args)
+  {
+	Scanner s = new Scanner (System.in);
+	int mul = 9375;
+	int div = 15;
+	int bsq = mul / div;
+	int b = (int) Math.sqrt (bsq);
+	int a = div * b;
+	  System.out.println(a);
+	 System.out.println(b);
+	  System.out.print(a+b);
+}
+}
+
+
+
+
+
+import java.util.*;
+public class Main
+{
+  public static void main (String[]args)
+  {
+	Scanner s = new Scanner (System.in);
+	int n=s.nextInt();
+	int k=0,l=0;
+	for(int i=1;i<=n;i++)
+	{
+	    l=k+i;
+	    k=l;
+	    for(int j=1;j<=i;j++)
+	    {
+	        System.out.print(l);
+	        l--;
+	    }
+	    System.out.println();
+	}
+  }
+}
+
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n=s.nextInt();
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=n-i;j++)
+            {
+                System.out.print(" ");
+            }
+            
+            for(int k=1;k<=2*i-1;k++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for(int i=n-1;i>0;i--)
+        {
+            for(int j=1;j<=n-i;j++)
+            {
+                System.out.print(" ");
+            }
+            
+            for(int k=1;k<=2*i-1;k++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+    }
+        
+}
+
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int n=s.nextInt();
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=n-i;j++)
+            {
+                System.out.print(" ");
+            }
+            
+            for(int k=1;k<=i;k++)
+            {
+                System.out.print(i+" ");
+            }
+            System.out.println();
+        }
+        
+        }
+        
+    }
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int a=s.nextInt();
+	    int b=s.nextInt();
+	    int c=s.nextInt();
+	    if(a==0 || b==0 || c==0)
+	    {
+	        System.out.print("No");
+	    }
+	    
+	    else if(a+b>c || a+c>b || c+b>a)
+	    {
+	        System.out.print("Yes");
+	    }
+	   
+
+	}
+}
+
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int n=s.nextInt();
+	    for(int i=0;i<n;i++)
+	    {
+	        for(int j=n-i;j>1;j--)
+	        {
+	            System.out.print("  ");
+	        }
+	        for(int k=i;k>=0;k--)
+	        {
+	            System.out.print(k+" ");
+	        }
+	        for(int k=1;k<=i;k++)
+	        {
+	            System.out.print(k+" ");
+	        }
+	        System.out.println();
+	    }
+	}
+}
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int n=s.nextInt();
+	    int a[]=new int[n];
+	    for(int i=0;i<n;i++)
+	    {
+	        a[i]=s.nextInt();
+	    }
+	    Arrays.sort(a);
+	    for(int i=0;i<n;i++)
+	    {
+	        int c=0;
+	        for(int j=i+1;j<n;j++)
+	        {
+	            if(a[i]==a[j])
+	           {
+	               c++;
+	           }
+	        }
+	        if(c>0)
+	        {
+	            System.out.print(a[i]+" ");
+	        }
+	    }
+	}
+}
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int n=s.nextInt();
+	    int a[]=new int[n];
+	    for(int i=0;i<n;i++)
+	    {
+	        a[i]=s.nextInt();
+	    }
+	   int min=0;
+	    for(int i=0;i<n;i++)
+	    { 
+	        int c=0;
+	        for(int j=i+1;j<n;j++)
+	        {
+	               if(a[i]%2==0)
+	               {
+	                   if(a[i]==a[j])
+	                    c++;
+	               }
+	                min=a[i];;
+	               if(min>a[i])
+	               {
+	                   min=a[i];
+	               }
+	           }
+	        }
+        }
+        System.out.print(min);
+	}
+}
+
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int n=s.nextInt();
+	    int c=0;
+	    for(int i=0;i<=n;i++)
+	    {
+	       double p=Math.pow(2,i);
+	       if(p==n)
+	       {
+	           c++;
+	           System.out.print("True");
+	           break;
+	       }
+        }
+        if(c==0)
+        {
+            System.out.print("False");
+        }
+        
+	}
+}
+
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int n=s.nextInt();
+	    if(n>0){
+	          for(int i=0;i<=n;i++)
+	          {
+	            System.out.print(i+" ");
+	         }
+	    }
+	    else if(n<0)
+	    {
+	        for(int i=n;i<=0;i++)
+	        {
+	            System.out.print(i+" ");
+	        }
+	    }
+}
+}
+
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int a=s.nextInt();
+	    int b=s.nextInt();
+	    int min=0;
+	    int n=0;
+	    if(a>b)
+	    {
+	        min=b;
+	    }
+	    else 
+	    {
+	        min=a;
+	    }
+	    for(int i=1;i<=min;i++)
+	    {
+	        if(a%i==0 && b%i==0)
+	        {
+	            n=i;
+	        }
+	    }
+	    System.out.print(n);
+	}
+}
+
+
+
+interface area oof circle,rectangle,triangle
+import java.util.*;
+
+interface Circle {
+    void areaofc();
+}
+
+interface Rectangle {
+    void areaofr();
+}
+
+interface Triangle {
+    void areaoft();
+}
+
+public class Area implements Circle, Rectangle, Triangle {
+    double c;  
+    int c1;    
+    double c2; 
+    public void areaofc() {
+        int r = 5; 
+    }
+    public void areaofr() {
+        int l = 10; 
+        int w = 5;  
+        c1 = l * w;
+    }
+
+ 
+    public void areaoft() {
+        int b = 8;  
+        int h = 4;  
+        c2 = 0.5 * b * h;
+    }
+
+    public void display() {
+        System.out.println("Area of circle: " + c);
+        System.out.println("Area of rectangle: " + c1);
+        System.out.println("Area of triangle: " + c2);
+    }
+
+    public static void main(String[] args) {
+        Area a = new Area();
+        a.areaofc();
+        a.areaofr();
+        a.areaoft();
+        a.display();
+    }
+}
+
+
+
+import java.util.*;
+
+interface resizable {
+    void resizeWith();
+    void resizeheight();
+}
+
+class rectangle implements resizable {
+     int h;
+     int w;
+   
+    public void resizeWith() {
+         w=12;
+    }
+    
+    public void resizeheight() {
+        h=13;
+    }
+   
+
+    public static void main(String args[]) {
+       int e=100;
+        rectangle r = new rectangle();
+        
+        r.h=e;
+        r.w=e;
+        System.out.println(r.h+" "+r.w); 
+    }
+}
+
+
+
+import java.util.*;
+interface resizable
+{
+    void resizewidth(int w);
+    void resizeheight(int h);
+}
+public class Rectangle implements resizable
+{
+    int h;
+    int w;
+    public  Rectangle(int h,int w){
+        this.h=h;
+        this.w=w;
+    }
+    public void resizewidth(int w)
+    {
+       // this.h=h;
+        this.w=w;
+    }
+    public void resizeheight(int h)
+    {
+        this.h=h;
+    }
+    public void display()
+    {
+        System.out.print("Width"+w+"Height"+h);
+    }
+    
+	public static void main(String[] args) {
+	    Rectangle r=new Rectangle(10,20);
+	    r.display();
+	}
+}
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner s=new Scanner(System.in);
+	int n=s.nextInt();
+	for(int i=0;i<n;i++)
+	{
+	    for(int j=0;j<=i;j++)
+	    {
+	        char a=(char)(65+i);
+	        System.out.print(a);
+	}
+	  System.out.println();
+	}
+}
+}
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner s=new Scanner(System.in);
+	String s1=s.nextLine();
+	String s2=s.nextLine();
+	StringBuffer b=new StringBuffer(s2);
+	String s3=b.reverse().toString();
+	System.out.print(s1+s3);
+}
+}
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner s=new Scanner(System.in);
+	String s1=s.nextLine();
+	String s2=s.nextLine();
+	String s3="";
+    for(int i=0;i<s1.length();i++)
+    {
+        int c=0;
+        for(int j=0;j<s2.length();j++)
+        {
+            if(s1.charAt(i)==s2.charAt(j))
+            {
+                c++;
+            }
+        }
+        if(c<1)
+        {
+            System.out.print(s1.charAt(i));
+        }
+        
+    }
+}
+}
+
+ip:java
+op:jaav
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner s=new Scanner(System.in);
+	String s1=s.nextLine();
+	String s2="";
+	String s3="";
+    int n=s1.length()/2;
+    for(int i=0;i<n;i++)
+    {
+        s2=s2+s1.charAt(i);
+    }
+    for(int i=s1.length()-1;i>=n;i--)
+    {
+        s3=s3+s1.charAt(i);
+    }
+    String s4=s2+s3;
+    System.out.print(s4);
+}
+}
+
+Abstract class
+
+import java.util.*;
+abstract class A
+{
+    public abstract void print();
+    public void display()
+    {
+        System.out.println("zzz");
+    }
+}
+class B extends A
+{
+    public void print()
+    {
+        System.out.println("abc");
+    }
+}
+class Main
+{
+    public static void main (String[] args) {
+    B b=new B();
+    b.display();
+    b.print();
+}
+}
+
+Interface:
+
+import java.util.*;
+interface vehicle
+{
+    void gear(int g);
+    void speed(int s);
+}
+class B implements vehicle
+{
+    int gr;
+    int sp;
+    public void gear(int g)
+    {
+        gr=g;
+    }
+    public void speed(int s)
+    {
+        sp=s;
+    }
+    public void print()
+    {
+        System.out.print(gr+" "+sp);
+    }
+}
+class Main
+{
+    public static void main (String[] args) {
+    B b=new B();
+    b.gear(5);
+    b.speed(6);
+    b.print();
+}
+}
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        
+        int oddPositionSum = 0;
+        int evenPositionSum = 0;
+        int position = 1;
+        
+        while (number > 0) {
+            int digit = number % 10; // Extract the least significant digit
+            if (position % 2 == 0) {
+                evenPositionSum += digit;
+            } else {
+                oddPositionSum += digit;
+            }
+            number /= 10; // Remove the least significant digit
+            position++;
+        }
+        
+        System.out.println("Sum of digits at odd positions: " + oddPositionSum);
+        System.out.println("Sum of digits at even positions: " + evenPositionSum);
+        
+        scanner.close();
+    }
+}
+
+import java.util.*;
+public class Main
+{
+    public static void main(String args[])
+    {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=i;j>=1;j--)
+            {
+                System.out.print(j+" ");
+            }
+            for(int k=2;k<=i;k++)
+            {
+                System.out.print(k+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+import java.util.Scanner;
+
+public class main
+{
+	public static void main(String args[])
+	{
+		Scanner reader =  new Scanner(System.in);
+		int startNum = reader.nextInt();
+		int endNum = reader.nextInt();
+		int primeCount = 0;
+		for (int i = startNum; i <= endNum; i++)
+		{
+			boolean test = false;
+			for (int j = 2; j <i; j++)
+			{
+				if (i % j == 0)
+				{
+					test = true;
+					break;
+				}
+			}
+			if (test == false)
+			{
+				System.out.print("\nPrime number = " + i);
+				primeCount++;
+			}
+		}
+		System.out.print("\nTotal number of primes are " + primeCount);
+	}
+}
+
+
+
+import java.util.Scanner;
+
+public class main
+{
+   public static void main(String args[])
+     {
+         System.out.print("Enter the number: ");
+         Scanner reader = new Scanner(System.in);
+         int num = reader.nextInt();
+         reader.close();
+         if( num%2 == 0)
+	   {
+        System.out.print("\nEntered number " + num + " is an Even number.");
+           }
+         else
+	   {
+         System.out.print("\nEntered number " + num + " is an Odd number.");           
+           }    
+     }
+}
+
+
+import java.util.Scanner;
+public class Factorial
+{
+    public static void main(String args[])
+    {
+    	Scanner reader = new Scanner(System.in);
+	System.out.print("\nEnter a number: ");
+	int num = reader.nextInt();
+	int fact = 1;
+	if(num == 0)
+	{
+	     System.out.print("Factorial of " + num + " is " + fact);
+	}
+	else if (num > 0)
+	{
+	     for( int i = 1; i <= num ; i++)
+	     {
+		fact = fact*i;
+	     }
+	     System.out.print("\nFactorial of the given number is " + fact);
+	}
+	else
+	{
+		System.out.print("\nEntered a wrong number");
+	}
+    }
+}
+
+
+//Program to check whether a given number is a Palindrome number
+import java.util.Scanner;
+public class Palindrome
+{
+    public static void main(String args[])
+        {
+	    Scanner reader = new Scanner(System.in);
+	    System.out.print("\nEnter the number: ");
+	    int num = reader.nextInt();
+	    int numcopy = num;
+	    int reversenum = 0;
+	    while(num > 0)
+	    {
+	       reversenum = reversenum*10 + num%10;
+	       num = num/10;
+	    }
+	    if(reversenum == numcopy)
+	    {
+	       System.out.print("\nEntered number is a Palindrome number.");
+	    }
+	    else
+	    {
+	        System.out.print("\nEntered number is not a Palindrome number.");
+	    }
+	}
+}
+
